@@ -1,4 +1,6 @@
+import Modellor.Items;
 import Modellor.User.Buyer;
+import Modellor.User.Seller;
 import Service.RegisterService;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -12,6 +14,13 @@ public class Main {
         registerService.registerCrendials(buyer,"chabeer","1234");
        boolean loogedin= registerService.login(buyer,"chabeer","1234");
        System.out.println(loogedin);
+
+       if(loogedin){
+           Seller seller= new Seller();
+           Items item =new Items("lenovo",2,30000);
+           seller.addItem(item);
+           seller.updateItem(item,"HP",0,0);
+       }
 
     }
 }

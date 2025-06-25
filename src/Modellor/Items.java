@@ -19,7 +19,29 @@ public class Items {
         return quantity;
     }
 
+
     public int getPrice() {
         return price;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Items{" +
+                "product='" + product + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }
