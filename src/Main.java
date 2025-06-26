@@ -1,6 +1,7 @@
 import Modellor.Items;
 import Modellor.User.Buyer;
 import Modellor.User.Seller;
+import Service.ListInventory;
 import Service.RegisterService;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -18,8 +19,17 @@ public class Main {
        if(loogedin){
            Seller seller= new Seller();
            Items item =new Items("lenovo",2,30000);
+           Items item1 =new Items("Samsung",1,30000);
+           Items item2 =new Items("MAC",5,30000);
+           Items item3 =new Items("HP",9,30000);
            seller.addItem(item);
-           seller.updateItem(item,"HP",0,0);
+           seller.addItem(item1);
+           seller.addItem(item2);
+           seller.addItem(item3);
+          // seller.updateItem(item,"HP",0,0);
+           ListInventory listInventory = new ListInventory(seller);
+           listInventory.listInventory();
+
        }
 
     }

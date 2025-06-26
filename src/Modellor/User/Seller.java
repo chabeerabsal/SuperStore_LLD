@@ -14,9 +14,9 @@ public class Seller implements User {
     }
   public  void addItem(Items item){
        items.add(item);
-       for(Items i:items){
-           System.out.println(i);
-       }
+//       for(Items i:items){
+//           System.out.println(i);
+//       }
    }
    public void updateItem(Items item,String name, int price,int quantity){
         System.out.println("before updating"+ item);
@@ -42,6 +42,10 @@ public class Seller implements User {
             }
         }
        System.out.println("After updated"+ item);
+   }
+
+   public List<Items> getItem(){
+        return items;
    }
 
 
