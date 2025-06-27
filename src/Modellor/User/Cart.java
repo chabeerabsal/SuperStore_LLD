@@ -1,6 +1,7 @@
 package Modellor.User;
 
 import Modellor.Items;
+import Service.Payment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Cart {
        for(Items item:selectItems){
            total=total+item.getPrice();
        }
-       System.out.println(total);
+       return total;
     }
    public void removefromCart(Items item){
        items.remove(item);

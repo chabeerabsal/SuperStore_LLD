@@ -3,6 +3,7 @@ import Modellor.User.Buyer;
 import Modellor.User.Cart;
 import Modellor.User.Seller;
 import Service.ListInventory;
+import Service.Payment;
 import Service.RegisterService;
 
 import java.util.ArrayList;
@@ -45,8 +46,8 @@ public class Main {
            items.add(item2);
             List<Items> selectItems=card.selectItemsforPurchase(items);
            int total=card.printtotal(selectItems);
-           card.checkout(total);
-
+           Payment payment=card.checkout(total);
+           payment.cashONDelivery(true,selectItems);
        }
 
     }
