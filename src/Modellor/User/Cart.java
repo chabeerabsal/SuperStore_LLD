@@ -1,25 +1,34 @@
 package Modellor.User;
 
+import Modellor.Items;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cart {
-    private String product;
-    private int quantity;
-    private double price;
-
-    public Cart(String product, int quantity, double price) {
-        this.product = product;
-        this.quantity = quantity;
-        this.price = price;
+    private List<Items> items=new ArrayList<>();
+    private List<Items> selectItems=new ArrayList<>();
+   public void addtoCart(Items item){
+    items.add(item);
+     }
+    public int printtotal(List<Items> selectItems){
+       int total=0;
+       for(Items item:selectItems){
+           total=total+item.getPrice();
+       }
+       System.out.println(total);
     }
+   public void removefromCart(Items item){
+       items.remove(item);
+   }
 
-    public String getProduct() {
-        return product;
-    }
+   public Payment checkout(int total){
+       return new Payment(total);
+   }
 
-    public int getQuantity() {
-        return quantity;
-    }
 
-    public double getPrice() {
-        return price;
+    public List<Items> selectItemsforPurchase(List<Items> items) {
+       selectItems.addAll(items);
+       return selectItems;
     }
 }

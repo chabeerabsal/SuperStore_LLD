@@ -1,8 +1,12 @@
 import Modellor.Items;
 import Modellor.User.Buyer;
+import Modellor.User.Cart;
 import Modellor.User.Seller;
 import Service.ListInventory;
 import Service.RegisterService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -29,6 +33,19 @@ public class Main {
           // seller.updateItem(item,"HP",0,0);
            ListInventory listInventory = new ListInventory(seller);
            listInventory.listInventory();
+            Cart card=new Cart();
+            buyer.setCart(card);
+            buyer.addCard(item);
+            buyer.addCard(item1);
+            buyer.addCard(item2);
+            buyer.addCard(item3);
+
+           List<Items> items=new ArrayList<Items>();
+           items.add(item1);
+           items.add(item2);
+            List<Items> selectItems=card.selectItemsforPurchase(items);
+           int total=card.printtotal(selectItems);
+           card.checkout(total);
 
        }
 
