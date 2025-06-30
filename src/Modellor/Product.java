@@ -2,6 +2,7 @@ package Modellor;
 
 public class Product {
     private String name;
+    private String productID;
     private int price;
     private int quantity;
     private User seller;
@@ -26,6 +27,10 @@ public class Product {
 
     public User getSeller() {
         return seller;
+    }
+
+    public String getProductID() {
+        return productID;
     }
 
     @Override
